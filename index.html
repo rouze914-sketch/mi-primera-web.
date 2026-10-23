@@ -8,10 +8,10 @@
         :root {
             --bg-color: #fff1f2;        /* Fondo rosa muy suave */
             --card-bg: #ffffff;         /* Tarjeta blanca limpia */
-            --text-color: #4c1d95;      /* Texto principal oscuro para buen contraste */
-            --text-muted: #6b7280;      /* Texto secundario gris */
-            --accent-color: #d97706;    /* Tono dorado elegante */
-            --accent-hover: #b45309;    /* Dorado un poco más oscuro al pasar el mouse */
+            --text-color: #831843;      /* Texto principal en tono rosa oscuro/vino para buen contraste */
+            --text-muted: #9d174d;      /* Texto secundario en rosa medio */
+            --accent-color: #ec4899;    /* Rosa vibrante principal para botones */
+            --accent-hover: #db2777;    /* Rosa más intenso al pasar el mouse */
             --tag-bg: #fbcfe8;          /* Fondo rosa claro para las etiquetas */
             --tag-text: #831843;        /* Texto de las etiquetas */
         }
@@ -28,14 +28,27 @@
             min-height: 100vh;
         }
 
+        /* Animación de entrada para que la tarjeta aparezca suavemente */
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .container {
             max-width: 600px;
             background-color: var(--card-bg);
             padding: 40px;
             border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.15);
+            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.15);
             text-align: center;
-            border: 1px solid #fde68a;
+            border: 1px solid #fbcfe8;
+            animation: fadeInSlide 0.8s ease-out;
         }
 
         h1 {
@@ -72,6 +85,14 @@
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 500;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        /* Efecto de brinco en las etiquetas al pasar el mouse */
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            background-color: var(--accent-color);
+            color: #ffffff;
         }
 
         .btn-container {
@@ -89,13 +110,17 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.2s;
+            transition: all 0.3s ease;
             width: 80%;
             max-width: 250px;
+            box-shadow: 0 4px 10px rgba(236, 72, 153, 0.25);
         }
 
+        /* Efecto al pasar el mouse por el botón principal */
         .btn:hover {
             background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(236, 72, 153, 0.35);
         }
 
         .social-link {
@@ -104,12 +129,13 @@
             font-size: 0.95rem;
             margin-top: 15px;
             display: inline-block;
-            transition: color 0.2s;
+            transition: color 0.2s, transform 0.2s;
         }
 
         .social-link:hover {
             color: var(--accent-color);
             text-decoration: underline;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -120,7 +146,7 @@
         <div class="role">Estudiante de Ingeniería de Software</div>
         
         <p>
-            Apasionado por la tecnología, el desarrollo de software y la resolución de problemas. 
+            Apasionada por la tecnología, el desarrollo de software y la resolución de problemas. 
             Actualmente aprendiendo y construyendo proyectos para entender a fondo cómo funcionan las aplicaciones modernas.
         </p>
 
@@ -132,11 +158,11 @@
 
         <div class="btn-container">
             <!-- Enlace directo a tu GitHub -->
-            <a href="https://www.linkedin.com/in/roci%C3%B3-lara-vasquez-560447273/" target="_blank" class="btn">Visita mi GitHub</a>
+            <a href="https://github.com/rouze914-sketch" target="_blank" class="btn">Visita mi GitHub</a>
         </div>
 
-        <!-- Cambia 'https://linkedin.com' por el enlace de tu perfil de LinkedIn -->
-        <a href="https://linkedin.com" target="_blank" class="social-link">Conéctate conmigo en LinkedIn</a>
+        <!-- Enlace de LinkedIn -->
+        <a href="https://www.linkedin.com/in/roci%C3%B3-lara-vasquez-560447273/" target="_blank" class="social-link">Conéctate conmigo en LinkedIn</a>
     </div>
 
 </body>
